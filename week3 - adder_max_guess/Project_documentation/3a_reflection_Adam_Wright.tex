@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\addtolength{\oddsidemargin}{-1in}
+\addtolength{\evensidemargin}{-1in}
+\addtolength{\textwidth}{2in}
+\addtolength{\topmargin}{-1in}
+\addtolength{\textheight}{1.5in}
+\begin{document}
+	
+Author:            Adam Wright\\
+
+Date:              1/23/2019\\
+
+Description:       Assignment 3a reflection\\ \\
+
+\section*{Understanding}
+As I worked with the problem, I thought that I had it all working initially. It became clear after thinking about the planning review that certain cases, like a set of all negative numbers would not work with my initial implementation. I found that when I changed my loop type from a for loop to a while loop that my min and max output variables, which had worked properly with the for loop were now broken when I tried to use the while loop. I now received a zero for the min output and a huge number for max output. I tried assigning the min and max values with zeros, even though I knew that this would never work for the final program, and then the while loop worked again for sets that had values that were above and below zero, so I knew that it wasn't my control flow, but it was that the for loop and the while loop worked differently with uninitialized variables.
+\section*{Testing Plan}
+While I felt confident that I had come up with all of the possible test cases that would be needed to test the program there was one that I was clearly wrong about. The program would not work properly with my initial for loop and uninitialized variables when all of the numbers were negative. If all were positive, or if there was a mix of positive and negative numbers then the program worked as expected, but when I followed the feedback to test all negative numbers, then it became clear that it would no longer work correctly. The min would show the proper value but the max would display 0 instead of the least negative number. This showed me that only through doing testing can anyone have a sense of the unknowns that they didn't think would exist.\\
+\section*{Design}
+I personally preferred the initial design using a for loop because it kept the loop iterator only in the loop which was the only place where it needed to be used. It seemed to be more elegant to not have to define an additional variable outside the loop when it would only be needed as the loop iterator. This is a case where the loop will run for a preordained number of times, though the preordained number will set by the user and will different each time. It was clear from the feedback though that I should choose to use a while loop, and that does make sense as the loop will run until some condition is no longer true. Though switching to the while loop seemed to break the program it was clear that it was necessary to make the while loop implementation work, as it was the desired implementation. Thankfully, the broken output values and the program not working for negative numbers were both solved with the same addition. Initializing the min and max to the highest and lowest possible values brought everything together nicely and was a great relief. 
+\section*{Implementation}
+During implementation the two main problems I encountered were that when I removed the for loop, the unassigned min and max variables were broken, and also that it became clear that the program didn't work for a set of all negative numbers. The only outside search that I did was a quick search for the min and max values for an int, and then I assigned the most negative to max so that would have a full range to go up and I assigned the highest possible value to the min variable, so that it would have the full possible range to go down. Since the user will be entering at least one number, this solution seemed very reasonable and I added a comment next to the variable definitions, so that the two values weren't just sitting there as magic numbers without any context.
+\section*{Improvement}
+It is clear that the only way to get better at testing is to do more of it, and to have a better sense of the things that can possibly be wrong with a program. I did not think about a set of all negative numbers at all. I had tested the set that was given with the assignment, and then was caught up in thinking that all tested sets would include some mix of negative and positive. I tested numerous sets of all positive numbers, so I have no idea why I didn't think to test sets of all negative numbers, but I didn't. It seemed clear that repeated numbers and decrimenting sets would work as well as incrementing sets though I didn't think to include any of those in my testing plan and will certainly make sure to do so in the future. I will definitely be sure to test sets of all negative numbers in the future.
+\end{document}
