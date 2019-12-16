@@ -1,3 +1,3 @@
-# CS-161_Programming_1
+# Oregon State University CS-161 Programming 1
 
-Introduction to programming at Oregon State University. The class uses c++ as it's programming language.
+Introduction to programming winter term 2019 at OSU. The class uses c++ as it's programming language.
